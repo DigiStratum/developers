@@ -1,4 +1,13 @@
-Project Organization
+# Coding Guidelines
+Employees and contractors alike should use the following guide as a reference for managing software source code, file organization, code organization, and styles. Most of the guidelines below follow common industry practicies, but there are also common industry disagreements which we are resolved upon for ourselves.
+
+There are a handful of capitalized keywords which are significant to the guidelines themselves:
+* MUST - This is a requirement; a pull request will be rejected for failing to meet these requirements. There aren't many of these though
+* SHOULD - This is a strongly opinionated suggestion; a pull request might generate a snarky comment or two for violating these, but won't be rejected in a pinch
+* MAY - This is an optional, open door invitation to utilize this in your projects
+* NOT - The logical inversion requires no introduction!
+
+## Project Organization
  * Source files SHOULD be placed into a /src subdirectory of the project
    * i.e. NOT into the project root
  * A given source file SHOULD represent only a single class for object oriented languages
@@ -7,7 +16,7 @@ Project Organization
    * i.e. NOT into the project root
    * i.e. NOT nested below /src
 
-Naming Conventions
+## Naming Conventions
  * Contsants SHOULD be `ALL_CAPS` with underscores separating words
  * Type, Class, and Interface declarations SHOULD be `UpperCamelCase`
  * Variable, Class Instance, Function/Method names SHOULD be `lowerCamelCase`
@@ -34,7 +43,7 @@ Naming Conventions
    * e.g. `startActivity()` and  `stopActivity()`
    * e.g. `incrementCounter()` and  `decrementCounter()`
 
-Constants
+## Constants
  * Names of related constants MUST be grouped together with common prefix
    * e.g. `STATUS_OK = 200; STATUS_CLIENT_ERROR = 400;`
  * Static numeric values SHOULD be defined as constants
@@ -44,7 +53,7 @@ Constants
  * Interpreted string values SHOULD use double-quotes where possible
    * e.g. `logEvent("Got event $event from somewhere");`
 
-Internationalization
+## Internationalization
  * Static string messages SHOULD either:
    a. Be programmatically referenced by name in code where the name is an index into a string resource collection which can be updated without rebuilding the application
    b. Be stored as English language literals in code where the English string itself is an index into a string resource collection which can be updated without rebuilding the application
@@ -54,7 +63,7 @@ Internationalization
  * String representation in user interfaces MUST:
    1. Be encapsulated such that the string will present properly for Left-to-Right OR Right-to-Left languages
 
-Source Formatting
+## Source Formatting
  * Source code SHOULD be indented with TAB characters
  * Statements / expression SHOULD have spaces inserted between names, operators, and control characters
    * e.g. `function raiseCount( int amount = 1 ) { this.counter += amount; }`
@@ -75,7 +84,7 @@ Source Formatting
    * e.g. NOT `if (x>0 && x<10 && y>0 && y<10) {}`
  * SQL keywords SHOULD be ALL CAPS in queries
 
-Coding Tactics
+## Coding Tactics
  * Static properties of a class MUST be referenced via the class
    * e.g. `MyClass.convenientStaticMethod();`
    * e.g. NOT `instance = new MyClass(); instance.convenientStaticMethod();`
@@ -84,7 +93,7 @@ Coding Tactics
  * Singleton object oriented pattern MAY be used where there is a sound argument to do so
  * Large chunks of HTML, JSON, XML, SQL, etc SHOULD be represented with whatever form of block quote is supported by the language (similar to / AKA "heredoc")
 
-Code Comments
+## Code Comments
  * Source file head, and definition/declaration of Classes, Methods / Functions, and variables SHOULD use JavaDoc style block comments
  * Method / Function internal implementation SHOULD use C++ style single-line comment
    * e.g. `// Everything after the // is ignored for the rest of the line!`
@@ -95,18 +104,17 @@ Code Comments
    * e.g. `isReady = ((getGate() ^ 255) & 4); // PHP truthiness: third bit from gate == 0 for shift register to be ready`
  * Recursive algorithms MUST be clearly documented / indicated
 
-Code Complexity
+## Code Complexity
  * Functions, Methods, and other Code Blocks SHOULD be small enough to fit on a single screen (~50 lines or less)
  * The depth of nested loops, iterators, closures SHOULD be less than five
  * Conditional expressions SHOULD be broken into "bite" size pieces for legibility to fit under 100 char line length
 
-Code Organization
- * Generally reusable things SHOULD be grouped together into an externally referenced library/dependency
- * Things related by function SHOULD be grouped together into a package/module
- * Code SHOULD be structured to present the references/dependencies before the things that use it, roughly in this order:
-   1. Dependencies
-   2. Definitions (Constants, Interfaces, Classes)
-   3. Variable declarations, regardless of scope
-   4. Function / Method / Inner Class declarations for public, protected, default (package-private), then private, in that order
-   5. For overloaded Functions / Methods, less specific (more general) come first, followed by more specific
-
+## Code Organization
+* Generally reusable things SHOULD be grouped together into an externally referenced library/dependency
+* Things related by function SHOULD be grouped together into a package/module
+* Code SHOULD be structured to present the references/dependencies before the things that use it, roughly in this order:
+1. Dependencies
+2. Definitions (Constants, Interfaces, Classes)
+3. Variable declarations, regardless of scope
+4. Function / Method / Inner Class declarations for public, protected, default (package-private), then private, in that order
+5. For overloaded Functions / Methods, less specific (more general) come first, followed by more specific
