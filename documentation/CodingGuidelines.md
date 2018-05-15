@@ -100,7 +100,7 @@ There are a handful of capitalized keywords which are significant to the guideli
  * Method / Function internal implementation SHOULD use comments to convey intent
    * e.g. `isFound = findUnicorn(); // See if we have any unicorns afield`
    * e.g. NOT `isFound = findUnicorn(); // Set isFound to result of findUnicorn function call`
- * Obscure logic / magic should be explained
+ * Obscure logic / magic SHOULD be explained
    * e.g. `isReady = ((getGate() ^ 255) & 4); // PHP truthiness: third bit from gate == 0 for shift register to be ready`
  * Recursive algorithms MUST be clearly documented / indicated
 
