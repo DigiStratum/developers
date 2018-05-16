@@ -51,3 +51,21 @@ As a software/product developer, you will be working on applications with docume
 * Create application project documentation (README.md)
 * Link internal and external standards and requirements to the project documentation
 * Review developer-provided changes for standards compliance and communicate about additional changes needed
+
+#### Test Coverage
+As a software/product developer, you will be testing your own work with automatable test coverage which is key to Continuous Integration / Deployment (CICD). Different projects will have different requirements and types of test automation in place for unit, integration, functional, performance, security, scalability, etc.
+
+##### Your Responsibilities
+* Follow the established testing model/conventions for the application/service that you are working on
+* Existing tests document expected behavior; if one fails, the behavior is broken, not the test, so don't "fix" the test unless the test can be shown to be invalid (and be prepared to explain why)
+* Familiarize yourself with the established testing model/conventions, framework and its capabilities
+* Ensure that the changes you make to application/service code are covered by at least one automated test
+* Inquire before introducing additional types/methods of testing not already established
+* If test coverage cannot be provided for a given change, be prepared to explain why
+* Consider Test Driven Development (TDD) process for your workflow if you do not already practice this
+* Get set up to execute the test automation suite locally in your development environment
+
+##### DigiStratum Responisibilities
+* Document the test coverage requirements and types in the project documentation
+* Integrate the test coverage automation via CI/CD platform
+* Monitor test automation execution and file bugs and assign as tasks for developers as needed for corrective action
