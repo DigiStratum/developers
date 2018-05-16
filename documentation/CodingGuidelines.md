@@ -55,9 +55,9 @@ There are a handful of capitalized keywords which are significant to the guideli
 
 ## Internationalization
  * Static string messages SHOULD either:
-   a. Be programmatically referenced by name in code where the name is an index into a string resource collection which can be updated without rebuilding the application
-   b. Be stored as English language literals in code where the English string itself is an index into a string resource collection which can be updated without rebuilding the application
-   c. Be stored as English language literal templates into which data variables are injected
+   1. Be programmatically referenced by name in code where the name is an index into a string resource collection which can be updated without rebuilding the application
+   2. Be stored as English language literals in code where the English string itself is an index into a string resource collection which can be updated without rebuilding the application
+   3. Be stored as English language literal templates into which data variables are injected
       * e.g. `message = _T("You now have $d points", userPoints);`
       * e.g. NOT `message = _T('Assembled messaging is %s in most languages', 'BAD and will break translation');`
  * String representation in user interfaces MUST:
